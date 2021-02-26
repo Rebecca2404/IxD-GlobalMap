@@ -1,0 +1,8 @@
+class Sprite {
+    constructor() {
+
+    }
+    init = () => {
+        
+    }
+}
