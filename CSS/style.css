@@ -18,11 +18,12 @@
 }
 .content {
     height: 100%;
-    background: red;
+    background: green;
 }
 .contentInner {
     height: 80%;
     margin-top: 40px;
+    background: black;
 }
 .header {
     background: dodgerblue;
