@@ -24,6 +24,10 @@
     height: 80%;
     margin-top: 40px;
     background: black;
+    background: black;
+}
+.contentInner {
+    height: 100%;
 }
 .header {
     background: dodgerblue;
