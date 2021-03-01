@@ -18,11 +18,12 @@
 }
 .content {
     height: 100%;
-    background: red;
+    background:black;
+ 
 }
 .contentInner {
-    height: 80%;
-    margin-top: 40px;
+    height: 100%;
+ 
 }
 .header {
     background: dodgerblue;
@@ -30,4 +31,5 @@
 #chartdiv {
     width: 100%;
     height: 100%;
+
 }

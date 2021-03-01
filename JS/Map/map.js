@@ -1,6 +1,7 @@
 class Map {
     constructor() {
-        this.chart = am4core.create("chartdiv",am4maps.MapChart);
+        this.container = am4core.create("chartdiv",am4core.Container);
+        this.chart = null;
         this.series = new am4maps.MapPolygonSeries();
     }
     init = () => {
@@ -9,15 +10,29 @@ class Map {
         this.showCanadianProvinces();
     }
     setup = () => {
+        this.container.width = am4core.percent(100);
+        this.container.height = am4core.percent(100);
+        this.chart = this.container.createChild(am4maps.MapChart);
+        this.chart.height = am4core.percent(100);
+        this.chart.homeZoomLevel = 2;
+        this.chart.zoomControl = new am4maps.ZoomControl();
+        this.chart.zoomControl.align = "right";
+        this.chart.zoomControl.marginRight = 15;
+        this.chart.zoomControl.valign = "middle";
+        this.chart.homeGeoPoint = { longitude: 0, latitude: -2 };
         this.chart.geodata = am4geodata_worldLow;
+      
         
-        this.chart.projection = new am4maps.projections.Orthographic();
-        this.chart.panBehavior = "rotateLongLat";
+        this.chart.projection = new am4maps.projections.Miller();
+        this.chart.panBehavior = "move";
+
         // this.chart.deltaLatitude = -30;
         // this.chart.deltaLongitude = 100;
       
         this.series.useGeodata = true;
         this.chart.series.push(this.series);
+        this.series.exclude = ["AQ"];
+        this.chart.seriesContainer.resizable = false;
       
     }
     setStyleProperties = () => {
@@ -53,7 +68,7 @@ class Map {
       
         },{
             id:"CA",
-            name:"Canada",
+            name:"canada",
             value:80,
             disabled:true,
             fill:am4core.color('#eb713d'),
