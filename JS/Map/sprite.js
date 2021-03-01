@@ -39,7 +39,7 @@ export class Sprite {
             "people":8
           },{
             "latitude":51.2538,
-            "longitude":85.3232,
+            "longitude":-85.3232,
             "title":"Canada",
             "people":24
           }];

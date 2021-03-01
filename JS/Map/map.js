@@ -16,7 +16,7 @@ class Map {
     init = () => {
         this.setup();
         this.setStyleProperties();
-        this.showCanadianProvinces();
+        // this.showCanadianProvinces();
 
         let sprite = new Sprite();
         sprite.init(this.chart);
@@ -125,10 +125,10 @@ class Map {
                     disabled: true,
                     fill: am4core.color('#eb713d'),
                     hover: am4core.color('red')
-        }
-                [
+        }]
                     template.propertyFields.fill = "fill"
                     template.tooltipText = "{name}: {value}"
-        ]
-            }
+        
+    }
+}
             export let yearbookMap = new Map();
